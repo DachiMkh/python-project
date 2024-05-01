@@ -25,7 +25,9 @@ def register_customer():
         "name" : name, 
         "surname" : surname, 
         "bank_no" : iban,
-        "balance" : amount
+        "balance" : amount,
+        #აქ ჩავამატებ percentage-ის ნაწილს
+        "percentage" : 0.082
     }
 
     database.append(record)
