@@ -7,7 +7,6 @@
 
 import client_main as main
 
-#percentage-ის ნაწილი იქნება ჩასამატებელი record-ს რომ ვქმნით იქ
 
 def loanCalc(iban, amount):
     for user in main.database:
