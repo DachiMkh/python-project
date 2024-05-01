@@ -13,6 +13,7 @@ def loanCalc(iban, amount):
         if user.get("bank_no") == iban:
             interest = amount * user["percentage"]
             print("Yearly interest on your amount will be:", interest)
+            print("You'll have to pay a total of", amount + interest)
             ans = input("Do you want to proceed? (Y/N): ").lower
             if ans == "y":
                 user["balance"] += amount
