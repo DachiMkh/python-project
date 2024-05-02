@@ -40,9 +40,9 @@ def bank_no_details():
     vl.check_iban(iban)
     for record in database:
         if record["bank_no"] == iban:
-            print(database)
-        else:
-            print("There is not such iban")
+            print(record)
+            return
+    print("There is not such iban")
 
 actions = {
     "register_customer" : register_customer,
