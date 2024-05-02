@@ -3,8 +3,7 @@
 #     მომხმარებელები შექმნიან ახალ საბანკო ანგარიშსს მათი სახელისა და საწყისი ბალანსის შეყვანით, საწყისი ბალანსი არ უნდა იყოს 100 ლარზე მეტი.
 #     სისტემა დაუგენერირებს უნიკალურ ანგარიშის ნომერს თითოეული ანგარიშისთვის (ფორმატი: TB0000 - TB9999).
 
-
-from iban_generator import iban_creator
+import iban_generator as ib
 import client_validator as vl
 
 database=[]
@@ -17,15 +16,18 @@ def register_customer():
     amount = input("Please enter Amount: ")
     vl.check_start_balance(amount)
 
-    iban = iban_creator()
+    iban = ib.iban_creator()
     vl.check_iban(iban)
     vl.check_in_db_register(database,iban)
+
+    percent=ib.percent_creator()
 
     record = {
         "name" : name, 
         "surname" : surname, 
         "bank_no" : iban,
-        "balance" : amount
+        "balance" : amount,
+        "percent" : percent
     }
 
     database.append(record)
