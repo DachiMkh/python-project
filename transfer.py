@@ -1,21 +1,27 @@
 from client_validator import check_client_info
 import client_main as main
 
-def money_transfer(giver, getter, amount):
-    giver_record = check_client_info(giver)
-    getter_record = check_client_info(getter)
+def money_transfer():
+    giver = input("who is giving the money: ")
+    getter = input("who is reciveing the money: ")
+    amount = int(input("how much: "))
 
-    if giver_record and getter_record:
-        giver_balance = float(giver_record.get("balance"))
-        getter_balance = float(getter_record.get("balance"))
+    
+    if giver and getter:
+        for user in main.database:
+            if user["bank_no"] == giver:
+                giver_balance = user["balance"]
+
+        for  user in main.database:
+              if user["bank_no"] == getter:
+                getter_balance = user["balance"]
+
 
         if giver_balance >= amount:
             print("Processing....")
             giver_balance -= amount
             getter_balance += amount
-            giver_record['balance'] = giver_balance
-            getter_record['balance'] = getter_balance
-            main.record.append({"bank_no": giver, "bank_no": getter, "balance": amount})
+            main.database.append({"bank_no": giver, "bank_no": getter, "balance": amount})
             print("Transfer completed successfully.")
         else:
             print("Insufficient balance in giver's account.")

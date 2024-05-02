@@ -8,10 +8,12 @@
 import client_main as main
 
 
-def loanCalc(iban, amount):
+def loanCalc():
+    iban = input("you iban: ")
+    amount = int(input("how much: "))
     for user in main.database:
-        if user.get("bank_no") == iban:
-            interest = amount * user["percent"]
+        if user["bank_no"] == iban:
+            interest = int(amount * user["percent"])
             print("Yearly interest on your amount will be:", interest)
             print("You'll have to pay a total of", amount + interest)
             ans = input("Do you want to proceed? (Y/N): ").lower

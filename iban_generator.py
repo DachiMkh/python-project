@@ -11,6 +11,6 @@ def iban_creator():
 
 
 def percent_creator():
-    percent=(random.randint(0,100))/100
+    percent=(random.randint(5,20))/100
     return percent
 

@@ -21,17 +21,13 @@ def check_in_db_register(database,iban):
             iban = iban_creator()
 
 def check_start_balance(amount):
-    if amount.isdigit() and int(amount) > 100:
+    if amount < 100 and amount > 0:
         return True
     
-    while not amount.isdigit():
-        print("Incorrect  information!")
-        amount=input("Please Enter amount: ")
-    
-    while int(amount) > 100  :
-        print("Please Enter less than 100!")
+    while int(amount) > 100 and int(amount) < 0:
+        print("Please Enter less than 100 and more than 0!")
         amount=input("Please enter amount: ")
 
     while int(amount) < 0  :
-        print("Balance caanto be negative")
+        print("Balance can not be negative")
         amount=input("Please enter amount: ")

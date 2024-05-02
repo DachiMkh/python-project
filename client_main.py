@@ -13,7 +13,7 @@ def register_customer():
     surname = input("Enter your surname: ")
     vl.check_client_info(name,surname)
 
-    amount = input("Please enter Amount: ")
+    amount = int(input("Please enter Amount: "))
     vl.check_start_balance(amount)
 
     iban = ib.iban_creator()
@@ -43,15 +43,3 @@ def bank_no_details():
             print(record)
             return
     print("There is not such iban")
-
-actions = {
-    "register_customer" : register_customer,
-    "bank_no_details" : bank_no_details
-}
-
-
-input_actions=input(f"Please enter action {actions.keys()}: ")
-
-while input_actions in actions.keys():
-    actions[input_actions]()
-    input_actions=input(f"Please enter action {actions.keys()}: ")
