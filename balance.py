@@ -5,6 +5,7 @@
 
 import client_main as main
 import client_validator as cm
+import history as h
 
 
 def topup_balance():
@@ -15,3 +16,8 @@ def topup_balance():
     for user in main.database:
         if user.get("bank_no") == iban:
             user["balance"] += balance
+
+            var1, var2, var3, var4 = user["name"], user["surname"], user["bank_no"], balance
+            h.trans_log(var1, var2, var3, var4)
+            
+

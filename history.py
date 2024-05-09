@@ -1,6 +1,11 @@
 import client_main as main
 import client_validator as cv
 
+def trans_log (var1, var2, var3, var4):
+    transaction_details = (f"{var1}, {var2}, {var3}, {var4} \n")
+    with open("transactions.txt", "a") as file:
+        file.write(transaction_details)
+
 def transfer_history():
     bank_no = input("enter your bank number: ")
     cv.check_iban(bank_no)
