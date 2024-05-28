@@ -6,32 +6,30 @@
 import iban_generator as ib
 import client_validator as vl
 
-database=[]
+database = []
 
 def register_customer():
     name = input("Enter your name: ")
     surname = input("Enter your surname: ")
-    vl.check_client_info(name,surname)
+    vl.check_client_info(name, surname)
 
     amount = int(input("Please enter Amount: "))
     vl.check_start_balance(amount)
 
     iban = ib.iban_creator()
     vl.check_iban(iban)
-    vl.check_in_db_register(database,iban)
+    vl.check_in_db_register(database, iban)
 
-    percent=ib.percent_creator()
-
-    user_id=ib.user_id_creator()
-    var1, var2, var3, var4 =name, surname, iban, user_id
-    ib.user_log(var1, var2, var3, var4)
+    percent = ib.percent_creator()
+    user_id = ib.user_id_creator()
+    ib.user_log(name, surname, iban, user_id)
 
     record = {
-        "name" : name, 
-        "surname" : surname, 
-        "bank_no" : iban,
-        "balance" : amount,
-        "percent" : percent
+        "name": name,
+        "surname": surname,
+        "bank_no": iban,
+        "balance": amount,
+        "percent": percent
     }
 
     database.append(record)
@@ -39,8 +37,9 @@ def register_customer():
 
 
 
+
 def bank_no_details():
-    iban=input("Please enter bank_no: ")
+    iban = input("Please enter bank_no: ")
     vl.check_iban(iban)
     for record in database:
         if record["bank_no"] == iban:
