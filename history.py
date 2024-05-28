@@ -18,3 +18,7 @@ def transfer_history():
             print("error")
             continue
 
+def trans_log_csv (var5, var6, var7, var8):
+    transaction_details = (f"{var5}, {var6}, {var7}, {var8} \n")
+    with open("transactions.csv", "a") as file:
+        file.write(transaction_details)

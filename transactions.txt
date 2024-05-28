@@ -7,3 +7,6 @@ liza, khelaia, TB5732, 20
 liza, khelaia, TB5732, 10 
 liza, khelaia, TB9336, 40 
 luka, khelaia, TB0968, 50 
+liza, salia, TB6365, 10 
+irakli, salia, TB4064, 40 
+natia, khazalia, TB8330, 30 

@@ -22,6 +22,10 @@ def register_customer():
 
     percent=ib.percent_creator()
 
+    user_id=ib.user_id_creator()
+    var1, var2, var3, var4 =name, surname, iban, user_id
+    ib.user_log(var1, var2, var3, var4)
+
     record = {
         "name" : name, 
         "surname" : surname, 
