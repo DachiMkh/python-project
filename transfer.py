@@ -1,5 +1,6 @@
 from client_validator import check_client_info
 import client_main as main
+import history as h
 
 def money_transfer():
     giver = input("who is giving the money: ")
@@ -23,6 +24,10 @@ def money_transfer():
             getter_balance += amount
             main.database.append({"bank_no": giver, "bank_no": getter, "balance": amount})
             print("Transfer completed successfully.")
+            for user in main.database:
+                if user.get("bank_no") == giver:
+                    var1, var2, var3, var4 = user["name"], user["surname"], user["bank_no"], amount
+                    h.trans_log(var1, var2, var3, var4)
         else:
             print("Insufficient balance in giver's account.")
     else:

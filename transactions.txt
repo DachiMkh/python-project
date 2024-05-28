@@ -1,2 +1,9 @@
 elene, buskivadze, TB2419, 50 
 hfask, fshadk, TB9727, 400 
+luka, khelaia, TB8661, 30 
+luka , khelaia, TB0455, 20 
+liza, khelaia, TB8077, 20 
+liza, khelaia, TB5732, 20 
+liza, khelaia, TB5732, 10 
+liza, khelaia, TB9336, 40 
+luka, khelaia, TB0968, 50 

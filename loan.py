@@ -20,3 +20,5 @@ def loanCalc():
             ans = input("Do you want to proceed? (Y/N): ").lower()
             if ans == "y":
                 user["balance"] += amount2
+            else:
+                return 
